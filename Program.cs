@@ -2,7 +2,7 @@
 
 System.Console.WriteLine("Gissa på ett tal mellan 1 och 100");
 
-int gissning = int.Parse(Console.ReadLine());
+int gissning = GetInputFromUser();
 
 while (gissning != hemligtNummer)
 {
@@ -14,8 +14,20 @@ while (gissning != hemligtNummer)
     {
         Console.WriteLine("Gissa lägre");
     }
-    gissning = int.Parse(Console.ReadLine());
+    gissning = GetInputFromUser();
 
 }
 System.Console.WriteLine("Bra gissat!");
 
+
+int GetInputFromUser()
+{
+    int result;
+    string input = Console.ReadLine();
+    while (!int.TryParse(input, out result))
+    {
+        Console.Write("Felakting inmatning, försök igen: ");
+        input = Console.ReadLine();
+    }
+    return result;
+}
