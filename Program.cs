@@ -3,13 +3,15 @@
 System.Console.WriteLine("Gissa på ett tal mellan 1 och 100");
 
 int gissning = GetInputFromUser();
+int gissningar = 1;
 
 while (!CheckGuess(gissning, hemligtNummer))
 {
+    gissningar++;
     gissning = GetInputFromUser();
 }
 
-System.Console.WriteLine("Bra gissat!");
+System.Console.WriteLine("Bra gissat!, du behövde " + gissningar + " gissningar");
 
 
 bool CheckGuess(int guess, int secret)
