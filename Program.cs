@@ -4,21 +4,28 @@ System.Console.WriteLine("Gissa på ett tal mellan 1 och 100");
 
 int gissning = GetInputFromUser();
 
-while (gissning != hemligtNummer)
+while (!CheckGuess(gissning, hemligtNummer))
 {
-    if (gissning < hemligtNummer)
-    {
-        Console.WriteLine("Gissa högre");
-    }
-    else if (gissning > hemligtNummer)
-    {
-        Console.WriteLine("Gissa lägre");
-    }
     gissning = GetInputFromUser();
-
 }
+
 System.Console.WriteLine("Bra gissat!");
 
+
+bool CheckGuess(int guess, int secret)
+{
+    if (guess < secret)
+    {
+        Console.WriteLine("Gissa högre");
+        return false;
+    }
+    else if (guess > secret)
+    {
+        Console.WriteLine("Gissa lägre");
+        return false;
+    }
+    return true;
+}
 
 int GetInputFromUser()
 {
