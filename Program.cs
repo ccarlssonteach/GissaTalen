@@ -1,5 +1,6 @@
 ﻿Random rng = new Random();
 
+// Comment from ccarlsson
 
 int hemligtNummer = rng.Next(1, 101);
 
