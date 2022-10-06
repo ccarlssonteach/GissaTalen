@@ -1,4 +1,7 @@
-﻿int hemligtNummer = 47;
+﻿Random rng = new Random();
+
+
+int hemligtNummer = rng.Next(1, 101);
 
 System.Console.WriteLine("Gissa på ett tal mellan 1 och 100");
 
